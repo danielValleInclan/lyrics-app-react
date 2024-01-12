@@ -1,38 +1,30 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+
+/* Definición de la animación para el botón */
+@keyframes pulse {
+  0% {
+      transform: scale(1);
+      background-color: #007bff; /* Color inicial del fondo */
+      color: #fff; /* Color inicial del texto */
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Sombreado inicial */
+  }
+  50% {
+      transform: scale(1.1);
+      background-color: #0056b3; /* Cambio de color del fondo al 50% de la animación */
+      color: #fff; /* Cambio de color del texto al 50% de la animación */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Cambio de sombreado al 50% de la animación */
+  }
+  100% {
+      transform: scale(1);
+      background-color: #007bff; /* Color final del fondo */
+      color: #fff; /* Color final del texto */
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Sombreado final */
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Aplicar la animación cuando la clase 'submitting' está presente en el botón */
+.submitting {
+  animation: pulse 0.5s ease-in-out;
 }
