@@ -60,11 +60,12 @@ class Form_search extends Component {
     render() {
         const { isSubmitting, buttonText } = this.state;
         return (
-        <Form onSubmit={this.handleSubmit}>
+        <div className='form-container'>
+            <Form onSubmit={this.handleSubmit}>
             <Row>
                 <Col>
                     <Form.Group>
-                        <Form.Label>Artista</Form.Label>
+                        <Form.Label>Artista:</Form.Label>
                         <Form.Control required type="string" min="1" placeholder="Nombre artista" name="artist" value={this.state.artist} onChange={this.handleChange} />
                     </Form.Group>
                 </Col>
@@ -80,7 +81,9 @@ class Form_search extends Component {
                     <Button type="submit" className={isSubmitting ? 'submitting' : ''} >{buttonText} </Button>
                 </FormGroup>
             </Row>
-        </Form>)
+        </Form>
+        </div>
+        )
     }
 }
 

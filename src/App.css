@@ -14,13 +14,24 @@ body {
 .container {
   margin-top: 50px;
 }
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .form-group {
   margin-bottom: 20px;
 }
 
+/* Estilos para las etiquetas */
+.form-label {
+  font-size: 18px; /* Tamaño de fuente más grande para las etiquetas */
+}
+
+/* Estilos para las cajas de texto */
 .form-control {
-  width: 100%;
+  width: 100%; /* Ancho reducido de las cajas de texto */
   padding: 8px;
   border: 1px solid #ced4da;
   border-radius: 4px;
@@ -39,6 +50,7 @@ body {
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
+  margin-top: 10px;
 }
 
 .btn:hover {
