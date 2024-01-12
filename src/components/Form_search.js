@@ -8,7 +8,8 @@ class Form_search extends Component {
         this.state = {
             artist: '',
             title: '',
-            isSubmitting: false
+            isSubmitting: false,
+            buttonText: 'Buscar'
         }
     }
     //Método que gestiona cuando se produce un cambio en algún campo del formualario
@@ -23,7 +24,7 @@ class Form_search extends Component {
     handleSubmit = async event => {
         event.preventDefault();
 
-        this.setState({ isSubmitting: true });
+        this.setState({ isSubmitting: true, buttonText: 'Buscando...' });
 
         const { artist, title } = this.state;
 
@@ -50,14 +51,14 @@ class Form_search extends Component {
             } else {
                 console.error('Error al obtener la letra de la canción');
             }
-            this.setState({ isSubmitting: false }); 
+            this.setState({ isSubmitting: false, buttonText: 'Buscar' }); 
         } catch (error) {
             console.error('Error en la solicitud a la API', error);
         }
     }
 
     render() {
-        const { isSubmitting } = this.state;
+        const { isSubmitting, buttonText } = this.state;
         return (
         <Form onSubmit={this.handleSubmit}>
             <Row>
@@ -76,7 +77,7 @@ class Form_search extends Component {
             </Row>
             <Row>
                 <FormGroup>
-                    <Button type="submit" className={isSubmitting ? 'submitting' : ''} >Buscar </Button>
+                    <Button type="submit" className={isSubmitting ? 'submitting' : ''} >{buttonText} </Button>
                 </FormGroup>
             </Row>
         </Form>)
